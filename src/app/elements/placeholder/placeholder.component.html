@@ -1,0 +1,11 @@
+<div class="ui placeholder">
+    <!-- use ngIf structural directive to show or hide the placeholder header using header (default = true) property from placeholder.component.ts component class file -->
+    <div *ngIf="header" class="image header">
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+    <div class="paragraph">
+        <!-- use appTimes custom structural directive to repeat the placeholder lines using lines (default = 3) property from placeholder.component.ts component class file -->
+        <div *appTimes="lines" class="line"></div>
+    </div>
+</div>

@@ -1,0 +1,5 @@
+/* use this :not(:first-of-type) means that is going to take a look at any time that we have multiple app divider elements that are siblings which are not the first one inside of these given components and apply styling only to those ones to each one of them */
+:host:not(:first-of-type) {
+    display: block;
+    margin-top: 20px;
+}

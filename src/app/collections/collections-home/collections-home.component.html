@@ -1,0 +1,28 @@
+<!-- show child components -->
+<app-divider>Table Component</app-divider>
+
+<!-- pass data and headers inside the parent component html template into the table component html template (child component) using property binding syntax inside of our template -->
+<!-- pass classes inside the parent component html template into the table component html template (child component) using property binding syntax inside of our template -->
+<app-table class="striped celled" [data]="data" [headers]="headers"></app-table>
+
+<app-divider>Tabs Component</app-divider>
+<app-tabs>
+    <!-- when using the routerLink attribute, we are going to end up with a route relative to the component that we write it in - in this case, relative to the collections-home component route -->
+    <!-- use routerLink to navigate a user around our application between child components using relative paths -->
+    <!-- routerLinkActive to highlight the active link -->
+    <!-- RouterLink="companies" means we are going to navigate to the companies component-->
+    <!-- refers to the relative path, relative to the file path in which is used (in this case, collections component folder - collections-home.component.html) e.g. "./" means the current route (means the collections folder), "/" means root folder (the absolute path of the app -> localhost:4200) etc. - see references in the diagrams -->
+    <!-- or use directly absolute paths, same thing: "/collections", "/collections/companies" or "/online-courses-live-source-codecollections/partners" -->
+    <!-- using routerLink with this syntax: routerLink="./companies" without property binding means that "./companies" is just plain text/string not code (as if it was property binding like this [routerLink]="./companies")  -->
+    <!-- use the [routerLinkActiveOptions]="{ exact: true }" to fix the link being active all the time, we want the link to be active only when the current route is localhost:4200/collections, when the route matches -->
+    <a class="item" routerLink="./" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Biography</a>
+    <a class="item" routerLink="./companies" routerLinkActive="active">Companies</a>
+    <a class="item" routerLink="./partners" routerLinkActive="active">Partners</a>
+    <!-- if we use routerLink with property binding we can usa an alternate form to designate exactly how to build the router link, you will see this approach in a lot of prjects -->
+    <!-- in this case we use an array with 2 elements: [routerLink]="['./', 'companies']" - advantages:
+                            - automatically places "/" when constructing the router link URL
+                            - we can easily refer to variables that we define in our component class: [routerLink]="['./', partOfLink]"
+                        -->
+    <!-- <a class="item" [routerLink]="['./', 'companies']" routerLinkActive="active">Companies</a> -->
+
+</app-tabs>

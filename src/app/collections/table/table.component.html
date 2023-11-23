@@ -1,0 +1,21 @@
+<!-- use *ngClass attribute directive to pass / add classes to the table -->
+<table [ngClass]="classNames" class="ui table">
+    <thead>
+        <tr>
+            <!-- use *ngFor structural directive to loop through the headers array and construct the table header -->
+            <th *ngFor="let header of headers">
+                {{ header.label }}
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- use *ngFor directive to loop through the records of data array and construct the table rows -->
+        <tr *ngFor="let record of data">
+            <!-- used for debugging -->
+            <!-- {{ record | json }} -->
+            <td *ngFor="let header of headers">
+                {{ record[header.key] }}
+            </td>
+        </tr>
+    </tbody>
+</table>

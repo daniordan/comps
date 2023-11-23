@@ -1,0 +1,4 @@
+/* hide the header if it is empty so the entire element will not show up and we won't get that strange header margin added into our segment and the button - the other widget remaining - will be centered off centered and off setting */
+div.ui.icon.header:empty {
+    display: none
+}

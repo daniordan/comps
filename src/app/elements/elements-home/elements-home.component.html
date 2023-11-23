@@ -1,0 +1,49 @@
+<!-- replace this with a Widget Module helper component - Divider from Shared Module -->
+<!-- <h1>Placeholder</h1> -->
+<!-- <hr /> replace this with a nicer divider -->
+<!-- <div class="ui divider"></div> -->
+<!-- <app-divider></app-divider> -->
+<!-- customize title by adding a new property title to the app-divider child component -->
+<!-- <app-divider title="Placeholder"></app-divider> -->
+
+<!-- Another approach to customize the title by grabbing content with NgContent -->
+<app-divider>Segment Component</app-divider>
+
+<app-segment>
+
+    <!-- 
+        - Use ng-content with select property (to specify exactly what we want to select) to select the header content shown in the segment-component.html child component 
+        - Instead of "header" we can use any different elements selectors to use for selection (e.g. "ul")
+        - We can also use an attribute selector like <div iconHeader> and then use iconHeader in the child template like this: <ng-content select="[iconHader]"
+        - We can also use an class selector like <div class="icon-header"> and then use .icon-header class in the child template like this: <ng-content select=".icon-header"
+    
+     -->
+
+    <header>
+        <i class="pdf file outline icon"></i>
+        No documents are listed for this customer
+    </header>
+
+    <button class="ui primary button">Add Document</button>
+</app-segment>
+
+<!-- add a new separate segment -->
+<app-segment>
+    <header>
+        <i class="add icon"></i>
+        Add a resource
+    </header>
+
+    <button class="ui primary button">Click to Add</button>
+</app-segment>
+
+<app-divider>Placeholder Component</app-divider>
+
+<!-- 
+    - this will show placeholder component content in the elements-home component 
+    - customize and pass down the header and lines properties in the parent component which displays the child component
+    - implementing this kind of configurable feature / generic approach for the app ensures reusability of the app for other projects
+    - use Property Binding Syntax
+-->
+
+<app-placeholder [header]="true" [lines]="3"></app-placeholder>

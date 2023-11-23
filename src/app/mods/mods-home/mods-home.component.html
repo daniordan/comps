@@ -1,0 +1,17 @@
+<app-divider>Modal Component</app-divider>
+<!-- add event biding on button to open modal and use *ngIf structural directive to show or hide the modal -->
+<!-- add events handlers to close the modal -->
+<button (click)="onClick()">Open Modal</button>
+<app-modal (close)="onClick()" *ngIf="modalOpen">
+    <div modalTitle>MODAL! Im am a REUSABLE modal window!!!</div>
+    <p>
+        Some content for the modal window should go right here! I am a REUSABLE modal window!!!
+    </p>
+    <!-- add ng-container to properly display the button -->
+    <ng-container modalFooter>
+        <button class="ui button" (click)="onClick()">CLOSE ME!</button>
+    </ng-container>
+</app-modal>
+
+<app-divider>Accordion Component</app-divider>
+<app-accordion [items]="items"></app-accordion>

@@ -1,0 +1,23 @@
+<!-- add event handlers to close the modal -->
+<div (click)="onCloseClick()" class="ui dimmer visible active">
+    <!-- use $event.stopPropagation() to stop event bubbling meaning that we will not be able to close the modal window when we click on the dimmer (overlay) of the modal -->
+    <div (click)="$event.stopPropagation()" class="ui modal visible active">
+        <i (click)="onCloseClick()" class="close icon"></i>
+        <div class="header">
+            <!-- use ng-content to select the content that we want to use in the header of the modal to make it reusable -->
+            <!-- use attribute selector to select the content that we want to use in the header of the modal to make it reusable -->
+            <ng-content select="[modalTitle]"></ng-content>
+        </div>
+        <div class="content">
+            <ng-content></ng-content>
+        </div>
+        <div class="actions actions-default">
+            <button (click)="onCloseClick()" class="ui button">OK</button>
+        </div>
+        <div class="actions">
+            <!-- use ng-content to select the content that we want to use in the footer of the modal to make it reusable -->
+            <!-- use attribute selector to select the content that we want to use in the footer of the modal to make it reusable -->
+            <ng-content select="[modalFooter]"></ng-content>
+        </div>
+    </div>
+</div>

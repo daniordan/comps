@@ -1,0 +1,15 @@
+<!-- <h1>ALLOW ME TO BE CUSTOMIZED</h1> -->
+
+<!-- customize title by adding a new property title to the app-divider child component using Interpolation Syntax -->
+<!-- <h1>{{ title }}</h1> -->
+
+<!--
+    Use ng-content
+    - Another approach to customize the title by grabbing content with special element NgContent
+    - Angular will take any content or any markup whatsoever (HTML elements, any directives, pipes, plain text) that is placed inside of the <app-divider></app-divider> tags from      elements-home.component.html file and will be automatically injected into our template in place of <ng-content></ng-content>
+-->
+
+<h1>
+    <ng-content></ng-content>
+</h1>
+<div class="ui divider"></div>

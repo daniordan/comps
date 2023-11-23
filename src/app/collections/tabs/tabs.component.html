@@ -1,0 +1,16 @@
+<div class="ui grid">
+    <div class="four wide column">
+        <div class="ui vertical fluid tabular menu">
+            <!-- here will be inserted the content from collections-home.component.html which is inside <app-tabs></app-tabs></app-tabs> -->
+            <ng-content></ng-content>
+        </div>
+    </div>
+    <div class="twelve wide stretched column">
+        <div class="ui segment">
+            <!-- add this for child routing navigation -->
+            <!-- in this way, Angular knows where exactly to place the child component - if we move this above the divider and table, it will show it on top when displaying the page -->
+            <!-- Angular collects the components, instantiates them, and displays them where the <router-outlet></router-outlet> is placed, actually in place of this router-outlet element -->
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

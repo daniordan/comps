@@ -1,0 +1,22 @@
+/* add some CSS rules to increase reusability of Modal component, add CSS rules to condition the display of different elements by using classes*/
+
+/* empty means that it will search for the element that has a class "actions" and has no child elements whatsoever meaning no child elements = no content whatsoever */
+/* this is for the case when ng-content is empty, no [modalFooter] provided which means the default button will be applied */
+.actions:empty {
+    /* means that it will not display */
+    display: none;
+}
+
+/* this means that when ng-content is empty, no [modalFooter] provided which means the default button will be applied */
+.actions-default {
+    /* means that it will not display */
+    display: none;
+}
+
+/* look for an element .actions that is empty and find a sibling element with class .actions-default */
+/*  this means that when ng-content is empty, no [modalFooter] provided which means the default button will be applied */
+.actions:empty+.actions-default {
+    display: block;
+}
+
+/* the last two rules are working together and means that by default, always hide the element with action and action-default classes */
