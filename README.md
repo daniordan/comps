@@ -1,5 +1,7 @@
 # Comps Angular App
 
+Application that recreates reusable widgets, including a modal, inside separate reusable components with interactivity inside Angular and Typescript code. Every component is designed to be fully reusable and allows user navigation through application's pages. Recreates components from Semantic-UI CSS style library by avoiding the use of outside JavaScript and JQuery libraries.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.9.
 
 ## Prerequisites
